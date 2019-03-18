@@ -1,10 +1,12 @@
 // implement your API here
 const express = require('express');
 const User = require('./data/db');
+const cors = require('cors');
 
 const server = express();
 server.use(express.json());
 server.use(express.urlencoded({ extended: false }));
+server.use(cors());
 
 server.get('/', (req, res) => {
   res.send('Hello World');
